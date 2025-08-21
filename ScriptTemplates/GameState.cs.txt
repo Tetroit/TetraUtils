@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class GameState
+{
+    public abstract string name { get; }
+    public abstract void OnApply();
+    public abstract void OnPop();
+}
+

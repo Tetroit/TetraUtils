@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class GameStateManager : MonoBehaviour
+{
+    Stack<GameState> m_Stack;
+    public static GameStateManager Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(Instance);
+        DontDestroyOnLoad(gameObject);
+        m_Stack = new();
+    }
+
+    public void Push(GameState state)
+    {
+        if (m_Stack.TryPeek(out GameState peek) && (peek == state))
+        {
+            Debug.Log("Pushed state was the same as the current, action terminated.", this);
+        }
+        m_Stack.Push(state);
+        state.OnApply();
+    }
+
+    public void Pop()
+    {
+        if (m_Stack.TryPop(out var state))
+            state.OnPop();
+    }
+}

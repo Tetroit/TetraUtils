@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b772b22688323b14d996b632d2bfb885, type: 3}
+  m_Name: Keyboard Map
+  m_EditorClassIdentifier: 
+  booleanActions:
+  - name: MoveBack
+    binds: 77000000
+  - name: MoveForward
+    binds: 61000000
+  - name: MoveLeft
+    binds: 73000000
+  - name: MoveRight
+    binds: 64000000
+  - name: Interact
+    binds: 65000000
+  - name: Attack
+    binds: 6600000043010000
